@@ -1,0 +1,43 @@
+ int firstBadVersion(int n)
+    {
+        int low = 1;
+        int high = n;
+        
+        while(low<=high)
+        {
+            int mid = low + (high-low)/2;
+            
+            if(!isBadVersion(mid))
+                low = mid+1;
+            
+            else
+                 high = mid-1;
+                
+       }
+        
+        return low;
+        
+    }
+};
+
+/**  why this int mid = low + (high-low)/2?
+            
+            
+            
+Assume mid is “x” distance from low…,
+
+So,
+
+mid = low + x 			 
+cool… this is convincing so far yet :P  
+Hey!! I am substituting your fav mid formula down here :P 
+( high + low ) / 2 = low + x 
+ 
+low + x = ( high + low ) / 2 
+x = ( high + low ) / 2 - low 
+x = ( high + low - 2 * low ) / 2 
+x = ( high - low ) / 2 
+ 
+yeah... I got the value of “x"... jinga lala hooooo... 
+            
+**/
